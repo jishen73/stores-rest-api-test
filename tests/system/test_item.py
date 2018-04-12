@@ -23,20 +23,8 @@ class ItemTest(BaseTest):
     def test_get_item_no_auth(self):
         with self.app() as client:
             with self.app_context():
-                # auth_request = client.post('/auth',
-                #                           data=json.dumps({'username': 'test', 'password': '1234'}),
-                #                           headers={'Content-Type': 'application/json'})
-                # print("###",auth_request.status_code,"###")
-                # print("###",auth_request.data,"###")
-                # # auth_token = json.loads(auth_request.data)['access_token']
-                # print("###",auth_request.data,"###")
-                # self.access_token = 'JWT {}'.format(auth_token)
-                # auth_request = client.post('/auth')
-                
                 resp = client.get('/item/TestItem')
-                # print("###",resp.data,"###")
-                # print("###",resp.status_code,"###")
-                # print("###",resp.headers,"###")
+                
                 self.assertEqual(resp.status_code, 401)
                 
 
